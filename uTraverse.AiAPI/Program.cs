@@ -34,7 +34,6 @@ builder.Services.AddAntiforgery();
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
 
-//builder.Services.AddHttpClient<IAiService, AiService>(client => client.BaseAddress = new Uri("http://localhost:5076"));  // For test use only
 builder.Services.AddHttpClient<IAiService, AiService>(client => client.BaseAddress = new Uri("http://localhost:1234"));
 
 builder.Services.AddScoped<IPlaceResolverService, PlaceResolverService>();
@@ -50,17 +49,17 @@ app.UseCors();
     app.UseSwaggerUI();
 //}
 
-Thread.Sleep(10000);
+//Thread.Sleep(10000);
 
-using (var scope = app.Services.CreateScope())
-{
-    var loader = new CsvLoader(scope.ServiceProvider.GetRequiredService<AiDbContext>());
+//using (var scope = app.Services.CreateScope())
+//{
+//    var loader = new CsvLoader(scope.ServiceProvider.GetRequiredService<AiDbContext>());
 
-    loader.LoadFile("./Datasets/id_to_XID_EKB.csv", "ekb");
-    loader.LoadFile("./Datasets/id_to_XID_NN.csv", "nino");
-    loader.LoadFile("./Datasets/id_to_XID_Vlad.csv", "vlad");
-    loader.LoadFile("./Datasets/id_to_XID_Yaroslavl.csv", "yaros");
-}
+//    loader.LoadFile("./Datasets/id_to_XID_EKB.csv", "ekb");
+//    loader.LoadFile("./Datasets/id_to_XID_NN.csv", "nino");
+//    loader.LoadFile("./Datasets/id_to_XID_Vlad.csv", "vlad");
+//    loader.LoadFile("./Datasets/id_to_XID_Yaroslavl.csv", "yaros");
+//}
 
 // Map health-checks and other Aspire stuff
 app.MapDefaultEndpoints();

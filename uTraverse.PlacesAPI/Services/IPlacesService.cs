@@ -8,13 +8,6 @@ namespace uTraverse.PlacesAPI.Services
     public interface IPlacesService
     {
         /// <summary>
-        /// Get place details by place ID
-        /// </summary>
-        /// <param name="id">The ID of the place</param>
-        /// <returns>Place instance containing the details of the place with given ID</returns>
-        Task<Place> GetPlaceByIdCacheAsync(string id);
-
-        /// <summary>
         /// Get details for places with given IDs
         /// </summary>
         /// <param name="ids">A collection of </param>

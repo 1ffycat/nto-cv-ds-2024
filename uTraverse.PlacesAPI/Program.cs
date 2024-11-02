@@ -42,17 +42,17 @@ app.MapDefaultEndpoints();
 
 app.UseCors();
 
-Thread.Sleep(10000);
+//Thread.Sleep(10000);
 
-using (var scope = app.Services.CreateScope())
-{
-    var loader = new CsvLoader(scope.ServiceProvider.GetRequiredService<PlacesDbContext>());
+//using (var scope = app.Services.CreateScope())
+//{
+//    var loader = new CsvLoader(scope.ServiceProvider.GetRequiredService<PlacesDbContext>());
 
-    loader.LoadFile("./Datasets/EKB_places (1).csv");
-    loader.LoadFile("./Datasets/NN_places.csv");
-    loader.LoadFile("./Datasets/Vlaf_places.csv");
-    loader.LoadFile("./Datasets/Yar_places.csv");
-}
+//    loader.LoadFile("./Datasets/EKB_places (1).csv");
+//    loader.LoadFile("./Datasets/NN_places.csv");
+//    loader.LoadFile("./Datasets/Vlaf_places.csv");
+//    loader.LoadFile("./Datasets/Yar_places.csv");
+//}
 
 // Map /places section of the API
 var places = app.MapGroup("/places");

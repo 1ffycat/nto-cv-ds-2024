@@ -21,4 +21,10 @@
   <ItemGroup>
     <ProjectReference Include="..\uTraverse.ServiceDefaults\uTraverse.ServiceDefaults.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\.dockerignore">
+      <Link>.dockerignore</Link>
+    </Content>
+  </ItemGroup>
 </Project>
